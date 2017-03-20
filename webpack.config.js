@@ -31,9 +31,14 @@ if (!isDev) plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}));
 
 const webpackInitialization = function (env) {
     const isDev = !env || (env && !env.prod);
+    const definitions = new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production')
+    });
+
     const plugins = [
         new ExtractTextPlugin('styles.css'),
-        new StringReplacePlugin()
+        new StringReplacePlugin(),
+        definitions
     ];
 
     if (!isDev) plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}));

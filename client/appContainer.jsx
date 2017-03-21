@@ -7,7 +7,7 @@ import MainPage from 'containers/Main/ContainerMainPage';
 import Layout from 'common/components/layout/ContainerLayout';
 import {createHashHistory} from 'history';
 
-const appHistory = useRouterHistory(createHashHistory)({queryKey: false});
+const appHistory = useRouterHistory(createHashHistory)();
 
 const views = {
     '/': MainPage,

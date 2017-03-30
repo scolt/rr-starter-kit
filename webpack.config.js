@@ -64,7 +64,7 @@ const webpackInitialization = function (env) {
                 path.resolve(__dirname, 'client/assets'),
                 path.resolve(__dirname, 'node_modules')
             ],
-            extensions: ['.js', '.jsx', '.styl']
+            extensions: ['.js', '.jsx', '.styl', '.html']
         },
 
         module: {
@@ -89,6 +89,10 @@ const webpackInitialization = function (env) {
                 {
                     test: /\.(png|jpg)\??/,
                     loader: 'url-loader?limit=100&name=images/[name].[ext]'
+                },
+                {
+                    test: /\.(html)\??/,
+                    loader: 'file-loader?name=[name].[ext]'
                 }
             ]
         },

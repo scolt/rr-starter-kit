@@ -1,3 +1,4 @@
+import 'index.html';
 import 'common/styl/global.styl';
 
 import React from 'react';
